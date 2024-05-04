@@ -4,10 +4,16 @@
 #include <citro2d.h>
 #include <iostream>
 
-inline int x = 0;
-inline int y = 0;
+struct Square
+{
+    int size = 50;
+    int x;
+    int y;
+};
 
+inline Square square;
 void moveSquare();
-void resetSquare();
+void resetSquare(Square&);
+void vertSet(Square&);
 
 #endif

@@ -10,7 +10,8 @@ inline int by = 0;
 inline int bx = 350;
 inline bool down = true;
 
-void rectSpawn();
+void rectMove();
+void gameOver();
 void resetRect();
 
 #endif

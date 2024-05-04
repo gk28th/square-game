@@ -7,28 +7,29 @@ void resetRect()
 	length = 50;
 	down = true;
 }
-
-void rectSpawn()
+void gameOver()
 {
-    if((x+50 >= bx) && (x+50 <= bx+50))
+	if(square.x+square.size >= bx && (square.x<=bx+50))
 	{	
-		if(down && (y <= length))
+		if(down && (square.y <= length))
 		{
 			sleep(1);
 			resetRect();
-			resetSquare();
+			resetSquare(square);
 		} 
-		if(!down && (y+50 >= 240-length)) 
+		if(!down && (square.y+square.size>=240-length)) 
 		{
 			sleep(1);
 			resetRect();
-			resetSquare();
+			resetSquare(square);
     	}	
 	}	
-	
+}
+void rectMove()
+{
 	if(!(bx <= -50)) 
 	{	
-		bx=bx-3;
+		bx=bx-4;
 	}		
 	else 
 	{

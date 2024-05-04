@@ -1,17 +1,17 @@
 #include "square.h" 
 
-void resetSquare()
+void resetSquare(Square &sqr)
 {
-	x = 0;
-	y = 0;
+	sqr.size = 50;
+	sqr.x = 0;
+	sqr.y = 0;
 }
-
 void moveSquare()
 {
 	hidScanInput();
 	u32 kHeld = hidKeysHeld();
-	if((kHeld & KEY_DUP) && (y != 0)) y=y-2;	
-	if((kHeld & KEY_DDOWN) && (y != 190)) y=y+2;  	
-	if((kHeld & KEY_DLEFT) && (x != 0)) x=x-2;
-	if((kHeld & KEY_DRIGHT) && (x != 350))	x=x+2;
+	if((kHeld & KEY_DUP) && (square.y != 0)) square.y = square.y - 2;
+	if((kHeld & KEY_DDOWN) && (square.y != 190)) square.y = square.y + 2;
+	if((kHeld & KEY_DLEFT) && (square.x != 0)) square.x = square.x - 2;
+	if((kHeld & KEY_DRIGHT) && (square.x != 350))	square.x = square.x + 2;	
 }

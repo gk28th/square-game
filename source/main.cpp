@@ -12,7 +12,8 @@ int main()
 	{
 		moveSquare();
 		drawFrame();		
-		rectSpawn();;
+		gameOver();
+		rectMove();
 	}
 
 	C2D_Fini();
