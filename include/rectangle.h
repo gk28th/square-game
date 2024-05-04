@@ -8,7 +8,7 @@
 inline int length = 50;
 inline int by = 0;
 inline int bx = 350;
-inline bool up = true;
+inline bool down = true;
 
 void rectSpawn();
 void resetRect();

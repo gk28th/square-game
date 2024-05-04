@@ -5,20 +5,20 @@ void resetRect()
 	bx = 350;
 	by = 0;
 	length = 50;
-	up = true;
+	down = true;
 }
 
 void rectSpawn()
 {
     if((x+50 >= bx) && (x+50 <= bx+50))
 	{	
-		if(up && (y <= length))
+		if(down && (y <= length))
 		{
 			sleep(1);
 			resetRect();
 			resetSquare();
 		} 
-		if(!up && (y+50 >= 240-length)) 
+		if(!down && (y+50 >= 240-length)) 
 		{
 			sleep(1);
 			resetRect();
@@ -34,8 +34,8 @@ void rectSpawn()
 	{
 		bx = 350;
 		length = rand() % 120 + 50;
-		if (!up) by = 0;
-		if (up) by = 240 - length;
-		up = !up;
+		if (!down) by = 0;
+		if (down) by = 240 - length;
+		down = !down;
 	}
 }
