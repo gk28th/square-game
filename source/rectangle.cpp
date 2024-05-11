@@ -9,25 +9,25 @@ void resetRect()
 }
 void gameOver()
 {
-	if(square.x+square.size >= bx && (square.x<=bx+50))
+	if((sqrX+sqrSize >= bx && sqrX+sqrSize <= bx+thickness) || sqrX == bx+thickness)//|| sqrY >= by
 	{	
-		if(down && (square.y <= length))
+		if(down && (sqrY <= length))
 		{
 			sleep(1);
 			resetRect();
-			resetSquare(square);
+			resetSquare();
 		} 
-		if(!down && (square.y+square.size>=240-length)) 
+		if(!down && (sqrY+sqrSize>=240-length)) 
 		{
 			sleep(1);
 			resetRect();
-			resetSquare(square);
+			resetSquare();
     	}	
 	}	
 }
 void rectMove()
 {
-	if(!(bx <= -50)) 
+	if(!(bx <= 0-thickness)) 
 	{	
 		bx=bx-4;
 	}		
